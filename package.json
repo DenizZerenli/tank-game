@@ -1,0 +1,13 @@
+{
+  "name": "tank-physics-game",
+  "version": "1.0.0",
+  "description": "2D Physics Tank Game with Phaser",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

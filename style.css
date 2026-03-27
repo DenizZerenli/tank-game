@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #050505;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    user-select: none;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glassmorphism HUD */
+.hud-container {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    pointer-events: none;
+}
+
+.hud-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px 25px;
+    color: white;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.score-display {
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.stats-display {
+    font-size: 18px;
+    color: #00ffcc;
+    text-transform: uppercase;
+}
+
+/* Modern Control Sliders */
+.controls-overlay {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 180px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #00ffcc;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+    transition: 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes scorePop {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.2); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+.score-pop {
+    animation: scorePop 0.3s ease-out;
+}
